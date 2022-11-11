@@ -11,7 +11,7 @@ function longestCommonPrefix(strs): string {
     })
     if (existInAllWords) {
       returnString += currentLetter;
-    }
+    } else { return returnString; }
   }
   return returnString;
 }
