@@ -3,7 +3,7 @@
     "target": "es2015",
     "module": "commonjs",
     "outDir": "dist",
-    "inDir": "src",
+    "sourceRoot": "src",
     "sourceMap": true,
   }
 }
