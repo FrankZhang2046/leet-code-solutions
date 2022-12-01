@@ -1,6 +1,8 @@
 
-function isBadVersion(num: number) {
-  return num >= 4;
+function isBadVersion(firstBadVersion: number) {
+  return function (num: number) {
+    return num >= firstBadVersion;
+  }
 }
 
 var solution = function (isBadVersion: any) {
@@ -25,4 +27,4 @@ var solution = function (isBadVersion: any) {
   }
 }
 
-console.log(solution(isBadVersion)(5))
+console.log(solution(isBadVersion(4))(5))
