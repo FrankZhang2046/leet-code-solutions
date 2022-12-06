@@ -1,5 +1,5 @@
 // Definition for singly-linked list.
-class ListNode {
+export class ListNode {
   public val: number;
   public next?: ListNode | null;
   constructor(val?: number, next?: ListNode | null) {
