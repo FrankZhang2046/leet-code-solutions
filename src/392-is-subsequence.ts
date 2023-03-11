@@ -1,17 +1,21 @@
 function isSubsequence(s: string, t: string): boolean {
-  function recursiveHelper(idxS: number, idxT: number): boolean {
-    if (idxS > s.length -1) {
-      return true;
-    } else if (idxT > t.length-1) {
-      return false;
+    /*
+        Intuition: use two pointers, p1 for s, p2 for t. When letters under both pointers match, increase both pointers, else increase p2, break when p2 is out of bounds, return true when p1 is out of bounds
+        I'd like to use recursion to solve this problem
+    */
+    function recursiveHelper(p1, p2): boolean {
+        if (p1 >= s.length) {
+            return true;
+        } 
+        if (p2 >= t.length) {
+            return false;
+        }
+        if (s[p1] === t[p2]) {
+            return recursiveHelper(p1+1, p2+1);
+        } else {
+            return recursiveHelper(p1, p2+1);
+        }
     }
-
-    if (s[idxS] === t[idxT]) {
-      return recursiveHelper(idxS+1, idxT+1);
-    } else {
-      return recursiveHelper(idxS, idxT+1);
-    }
-  }
-
-  return recursiveHelper(0, 0);
-}
+    
+    return recursiveHelper(0, 0);
+};
