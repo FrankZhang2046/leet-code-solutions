@@ -30,3 +30,22 @@ function detectCycle(head: ListNode | null): ListNode | null {
 
     return recursiveHelper(head);
 };
+
+// * iterative approach
+function detectCycle(head: ListNode | null): ListNode | null {
+    /*
+        Intuition: create a set, traverse through the list, if node not in set, add it to the set, if node already in set, means there's a cycle in the linked list
+    */
+    const nodeSet = new Set();
+    while (head) {
+        if (!nodeSet.has(head)) {
+            nodeSet.add(head);
+            head = head.next;
+        }
+        else {
+            return head;
+        }
+    }
+     
+    return null;
+};
