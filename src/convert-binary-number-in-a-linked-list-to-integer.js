@@ -12,7 +12,7 @@
 var getDecimalValue = function (head) {
     /* 
         - cache a global sum
-        - recurisvely traverse through the linked list to its tail, this is 2^0, add it to sum
+        - recursively traverse through the linked list to its tail, this is 2^0, add it to sum
             - each time we go back to a lower call stack frame, increase the power by 1, compute the value    
                 - Math.pow(2, pow) * node.val, add to sum
         - after the function call, return sum
